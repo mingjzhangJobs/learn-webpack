@@ -1,0 +1,26 @@
+{
+  "name": "mingjzhang",
+  "version": "1.0.0",
+  "description": "Because I will do something in company and at home so I start this to learn use webpack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_modules/.bin/webpack",
+    "server": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mingjzhangJobs/learn-webpack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mingjzhangJobs/learn-webpack/issues"
+  },
+  "homepage": "https://github.com/mingjzhangJobs/learn-webpack#readme",
+  "devDependencies": {
+    "webpack": "^2.6.1",
+    "webpack-cli": "^2.0.11",
+    "webpack-dev-server": "^2.4.5"
+  }
+}
