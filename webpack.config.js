@@ -1,3 +1,10 @@
+var webpack = require('webpack');
+var path = require("path");
+var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ROOT_PATH = path.resolve(__dirname);
+var APP_PATH = path.resolve(ROOT_PATH, "components");
+var BUILD_PATH = path.resolve(ROOT_PATH, "output");
 module.exports = {
     entry:  __dirname + "/entry.js",//已多次提及的唯一入口文件
     output: {
@@ -11,32 +18,29 @@ module.exports = {
     },
     module: {
         rules: [
+            { test: /\.css$/, use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader'})},
             {
-                test: /(\.jsx|\.js)$/,
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: [
-                            "env", "react"
-                        ]
-                    }
-                },
-                exclude: /node_modules/
-            },
-            {
-                test: /\.css$/,
+                test: /\.less$/,
                 use: [
+                    require.resolve('style-loader'),
+                    require.resolve('css-loader'),
                     {
-                        loader: "style-loader"
-                    }, {
-                        loader: "css-loader",
-                        options: {
-                            modules: true, // 指定启用css modules
-                            localIdentName: '[name]__[local]--[hash:base64:5]' // 指定css的类名格式
-                        }
-                    }
-                ]
-            }
+                        loader: require.resolve('less-loader'),
+                    },
+                ],
+            },
+            { test: /\.js[x]?$/, exclude: /node_modules/, loader: 'babel-loader',
+                options:{
+                    presets:[
+                        "env", "react"
+                    ]
+                }
+            },
+            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192&name=img/[name].[ext]' },
+            { test: /\.(woff|woff2|eot|ttf|svg)(\?.*$|$)/, loader: 'url' }
         ]
-    }
+    },
+    plugins: [
+        new ExtractTextPlugin("[name].css"),
+    ]
 }
