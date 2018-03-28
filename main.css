@@ -24,3 +24,9 @@ h1, h2, h3, h4, h5, h6, p, ul {
 .rooter{
     font-weight:700;
 }
+.good-name, .good-add,.good-reduce,.good-num{
+    display: inline-block;
+    margin-left:20px;
+    width:100px;
+    text-align: center;
+}
