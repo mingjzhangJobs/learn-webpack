@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Header from './components/header';
 import Mainmenu from './components/mainmenu';
 import Shopping from './components/shopping';
-import Routes from "./router";
-import { Router, hashHistory } from 'react-router';
+import Routes from './router';
+
 class App extends React.Component {
     render() {
         return (
@@ -11,9 +11,7 @@ class App extends React.Component {
                 <Header />
                 <Mainmenu />
                 <Shopping />
-                <Router history={ hashHistory }>
-                    { Routes() }
-                </Router>
+                <Routes />
             </div>
         );
     }
