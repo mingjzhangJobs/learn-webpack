@@ -8,7 +8,7 @@ class Page extends React.Component {
         return (
             <div>
                 <GlobalNav />
-                <div style={{ padding: 20, position: 'absolute', left: 200 }}>
+                <div style={{ padding: '20px 20px 0 20px', position: 'absolute', left: 200, right: 0, top: 0, bottom: 0, 'overflow-y': 'auto' }}>
                     {this.props.children}
                 </div>
             </div>

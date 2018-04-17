@@ -21,53 +21,33 @@ styles.link = {
     fontWeight: 200
 }
 
-
-// class GlobalNav extends React.Component {
-//     render() {
-//         const { user } = this.props
-//
-//         return (
-//             <div style={styles.wrapper}>
-//                 <div style={{ float: 'left' }}>
-//                     <Link to="/" style={styles.link}>Home</Link>{' '}
-//                     <Link to="/calendar" style={styles.link} activeStyle={styles.activeLink}>Calendar</Link>{' '}
-//                     <Link to="/grades" style={styles.link} activeStyle={styles.activeLink}>Grades</Link>{' '}
-//                     <Link to="/messages" style={styles.link} activeStyle={styles.activeLink}>Messages</Link>{' '}
-//                 </div>
-//                 <div style={{ float: 'right' }}>
-//                     <Link style={styles.link} to="/profile">{user.name}</Link> <button onClick={this.logOut}>log out</button>
-//                 </div>
-//             </div>
-//         )
-//     }
-// }
-//
-// GlobalNav.defaultProps = {
-//     user: {
-//         id: 1,
-//         name: 'Ryan Florence'
-//     }
-// }
-
-
 class GlobalNav extends React.Component {
     render() {
         return (
-            <Layout style={{ minHeight: '100vh',width: '200px', position: 'absolute' }}>
+            <Layout style={{ width: '200px', position: 'absolute', top: 0, bottom: 0,'overflow-y': 'auto', 'overflow-x': 'hidden' }}>
                 <Sider>
                     <div className="logo" />
                     <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-                        <Menu.Item key="1">
+                        <Menu.Item key="status">
                             <Icon type="pie-chart" />
-                            <Link to="/status">STATUS</Link>{' '}
+                            <Link to="/overview">概览</Link>{' '}
+                        </Menu.Item>
+                        <Menu.Item key="education">
+                            <Icon type="pie-chart" />
+                            <Link to="/education">教育经历</Link>{' '}
+                        </Menu.Item>
+                        <Menu.Item key="project">
+                            <Icon type="pie-chart" />
+                            <Link to="/project">项目经验</Link>{' '}
                         </Menu.Item>
                         <SubMenu
-                            key="sub1"
-                            title={<span><Icon type="user" /><span>User</span></span>}
+                            key="company"
+                            title={<span><Icon type="company" /><span>任职公司</span></span>}
+                            type="pie-chart"
                         >
-                            <Menu.Item key="3"><Link to="/work/zhiyue">ZHIYUE</Link>{' '}</Menu.Item>
-                            <Menu.Item key="4"><Link to="/work/yingying">YINGYING</Link>{' '}</Menu.Item>
-                            <Menu.Item key="5"><Link to="/work/grandstream">GRANDSTREAM</Link>{' '}</Menu.Item>
+                            <Menu.Item key="3"><Link to="/company/zhiyue">ZHIYUE</Link>{' '}</Menu.Item>
+                            <Menu.Item key="4"><Link to="/company/yingying">YINGYING</Link>{' '}</Menu.Item>
+                            <Menu.Item key="5"><Link to="/company/grandstream">GRANDSTREAM</Link>{' '}</Menu.Item>
                         </SubMenu>
                     </Menu>
                 </Sider>

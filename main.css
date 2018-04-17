@@ -30,3 +30,85 @@ h1, h2, h3, h4, h5, h6, p, ul {
     width:100px;
     text-align: center;
 }
+/*header*/
+#header{
+    position: absolute;
+    top: 0;
+    height: 60px;
+    width: 100%;
+}
+/*maincontent*/
+#maincontent{
+    position: absolute;
+    top:60px;
+    bottom:0;
+    width: 100%;
+}
+#maincontent>div{
+    width:100%;
+    height:100%;
+    overflow-y: auto;
+}
+
+/*company*/
+.content-item {
+    display: table;
+    width: 100%;
+    font-size:16px;
+    margin: 10px 0;
+}
+.content-item .content-item-name, .content-item .content-item-content {
+    display: table-cell;
+}
+.content-item-name {
+    text-align: right;
+    padding-right: 20px;
+    width: 30%;
+}
+.content-item-content {
+    width: 70%;
+}
+/*commom style*/
+.clearFloat:after{
+    display: table;
+    content: '';
+    clear: both;
+}
+.text-indent{
+    text-indent: 32px;
+}
+.div-p{
+    margin: 10px 0;
+}
+/*project-cards*/
+.project-card{
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin: 0 10px;
+}
+.project-card-img-wrapper{
+    height: 150px;
+}
+.project-card-img{
+    width: 100%;
+    cursor: pointer;
+}
+.project-card-content{
+    text-align: center;
+}
+.project-card-large{
+    width: 75% !important;
+    top: 0;
+}
+.project-card-large img{
+    width: 100%;
+}
+.ant-modal-wrap {
+    display: flex;
+    align-items: center;
+}
+.ant-menu-item a{
+    display: inline-block;
+    width: 100%;
+}
