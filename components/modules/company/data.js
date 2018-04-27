@@ -17,6 +17,10 @@ export var overviewdata = [
     },
     {
         'name':'',
+        'content':'对数据可视化有了解，熟练使用图表Echarts.js；画图插件raphael.js'
+    },
+    {
+        'name':'',
         'content':'熟练页面的架构和布局；'
     },
     {
